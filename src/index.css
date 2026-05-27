@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Uncial+Antiqua&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif-fantasy: 'Cinzel', Georgia, serif;
+  --font-fantasy: 'Uncial Antiqua', serif;
+  --font-cinzel-deco: 'Cinzel Decorative', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Custom scrollbars or standard high-end UI styles if needed */
+.fantasy-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.fantasy-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+.dark .fantasy-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+.fantasy-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 9999px;
+}
+.fantasy-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Alchemist's Workbench Texture and Ambiance */
+.alchemist-bg {
+  background-color: #0c0908;
+  /* Simulates dark, oil-rubbed old oak / leather workbench with radial candlelight shadows */
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(224, 130, 48, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(93, 63, 211, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(45, 175, 230, 0.08) 0%, transparent 45%),
+    linear-gradient(rgba(12, 9, 8, 0.95), rgba(8, 6, 5, 0.98));
+  position: relative;
+}
+
+/* High-fidelity procedural wood grain/textured effect using subtle repetitive lines */
+.alchemist-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 92, 26, 0.1) 2px, rgba(139, 92, 26, 0.1) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0, 0, 0, 0.3) 4px, rgba(0, 0, 0, 0.3) 8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated magical glow border keyframes */
+@keyframes magicalGlow {
+  0%, 100% {
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.15), inset 0 0 10px rgba(147, 51, 234, 0.05);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.3), inset 0 0 15px rgba(59, 130, 246, 0.1);
+  }
+}
+
+.magical-glow-card {
+  animation: magicalGlow 6s infinite ease-in-out;
+  border-width: 1px;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-80px) scale(0.3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-magic-particle {
+  animation: floatParticle 8s infinite linear;
+}
+
+
